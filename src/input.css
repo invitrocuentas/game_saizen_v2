@@ -1,0 +1,402 @@
+@font-face {
+  font-family: "Avenir Book";
+  src: url("./fonts/Avenir-Book.woff") format("woff");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Boldenvan";
+  src: url("./fonts/BoldenVan.woff") format("woff");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Boogaloo Regular";
+  src: url("./fonts/Boogaloo-Regular.woff") format("woff");
+  font-weight: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  user-select: none;
+}
+
+img{
+  -webkit-user-drag: none;
+}
+
+/* Estilos personalizados para el scrollbar */
+.politicas_contenido::-webkit-scrollbar {
+  width: 8px; /* Ancho de la scrollbar */
+  border-radius: 10px;
+}
+
+.politicas_contenido::-webkit-scrollbar-thumb {
+  background-color: #009DC8; /* Color del thumb (barra) */
+  border-radius: 10px;
+}
+
+.politicas_contenido::-webkit-scrollbar-track {
+  background-color: #EFEFEF; /* Color del track (fondo) */
+}
+
+/* animacion blink de input */
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+/* borde de texto */
+.texto-borde_estado_85 {
+  -webkit-text-stroke: .2vh #009CC5;
+}
+
+.texto-borde_estado_50 {
+  -webkit-text-stroke: .2vh #C68A00;
+}
+
+.texto-borde_estado_15 {
+  -webkit-text-stroke: .2vh #C60000;
+}
+
+/* productos botones splide */
+
+#itemsVer button svg, #productosVer button svg,#productos button svg{
+  display: none !important;
+}
+
+#productos .splide__arrow--prev{
+  background: url('../assets/vista_inicial/btnPrev.png');
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  left: -15vh !important;
+  opacity: 1 !important;
+}
+
+#productos .splide__arrow--next{
+  background: url('../assets/vista_inicial/btnNext.png');
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  right: -15vh !important;
+  opacity: 1 !important;
+}
+
+#itemsVer .splide__arrow, #productosVer .splide__arrow, #productos .splide__arrow{
+  height: 30vh !important;
+  width: 10vh !important;
+}
+
+#itemsVer .splide__arrow:hover, #productosVer .splide__arrow:hover, #productos .splide__arrow:hover{
+  scale: 105%;
+  transition-duration: 500ms;
+  transition: ease-in-out;
+}
+
+/* lista de alimentos */
+
+#itemsVer .splide__arrow--prev{
+  display: none !important;
+}
+
+#itemsVer .splide__arrow--next{
+  background: url('../assets/vista_inicial/btnNext.png');
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  left: 4vh !important;
+  bottom: -25vh !important;
+  opacity: 1 !important;
+  rotate: 90deg !important;
+}
+
+/* productos descripcion splide */
+
+#productosVer button svg{
+  display: none !important;
+}
+
+#productosVer .splide__arrows{
+  bottom: 5vh !important;
+  position: absolute !important;
+  right: 25vh !important;
+}
+
+#productosVer .splide__arrow--prev{
+  background: url('../assets/vista_inicial/btnPrev.png');
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  left: -6vh !important;
+  top: 4vh !important;
+  opacity: 1 !important;
+}
+
+#productosVer .splide__arrow--next{
+  background: url('../assets/vista_inicial/btnNext.png');
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  right: -15vh !important;
+  top: 4vh !important;
+  opacity: 1 !important;
+}
+
+#productosVer .splide__arrow{
+  height: 9vh !important;
+  width: 9vh !important;
+}
+
+#productosVer .splide__arrow:hover{
+  scale: 105%;
+  transition-duration: 500ms;
+  transition: ease-in-out;
+}
+
+.range-filled {
+  height: 100%;
+  background-color: #007bff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.memory-card {
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+/* .memory-card:hover .card-inner {
+  transform: rotateY(180deg);
+} */
+
+.rotate-y-180{
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-front img,
+.card-back img{
+  height: 100%;
+}
+
+.card-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-front {
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-bar {
+  width: 60vh;
+  height: 10vh;
+  background-color: #ccc;
+  border-radius: 5vh;
+  overflow: hidden; /* Esto ocultará cualquier contenido que se desborde */
+}
+
+.progress {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, #77CFE7, #009DC8, #005F8E, #015989); /* Color de la barra de progreso */
+  border-radius: 5vh;
+  transition: width 1s ease-in-out; /* Transición para la animación de la barra de progreso */
+}
+
+.active-tab {
+  background-color: white;
+  color: #B35B3D;
+}
+
+/* Mostrar el contenido de la pestaña activa */
+.tab-content.active-content {
+  display: flex;
+}
+
+.item_inhabilitado::before{
+  background-color: #000;
+  border-radius: 2vh;
+  content: "";
+  height: 22vh;
+  opacity: .5;
+  position: absolute;
+  top: 4.8vh;
+  width: 21vh;
+  z-index: 99;
+}
+
+.bloqued::before{
+  background-color: #000;
+  border-radius: 3vh;
+  content: "";
+  /* height: 18vh; */
+  height: 100%;
+  width: 100%;
+  opacity: .5;
+  position: absolute;
+  /* width: 18vh; */
+  z-index: 99;
+  pointer-events: none;
+}
+
+/* Estilo para el semáforo */
+.semaforo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos para los círculos de luces */
+.circulo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 10px;
+  transition: background-color 0.5s; /* Transición de color */
+}
+
+/* Estilos para las clases de colores */
+.rojo {
+  background-color: red;
+}
+
+.amarillo {
+  background-color: yellow;
+}
+
+.verde {
+  background-color: green;
+}
+
+.zeni-corriendo{
+  animation: animarDino 0.25s steps(2) infinite;
+}
+
+.zeni-agacharse{
+  height: 8vh;
+}
+
+.zeni-estrellado{
+  opacity: .5;
+}
+
+.cactus{
+  width: 4vh;
+  height: 6vh;
+
+  position: absolute;
+  bottom: absolute;
+  bottom: 13vh;
+  left: 60vh;
+  z-index: 5;
+  background-color: #000;
+}
+
+.cactus2{
+  width: 6vh;
+  height: 4vh;
+
+  position: absolute;
+  bottom: 25vh;
+  background-color: #000;
+}
+
+@keyframes animarZen{
+  from{
+    background-position-x: -30vh;
+  }
+  to{
+    background-position-x: -40vh;
+  }
+}
+
+.boton_gratis{
+  background-image: url('../assets/tienda/btnGratis.png');
+}
+
+.boton_obtener{
+  background-image: url('../assets/tienda/btnObtener.png');
+}
+
+.bg_valor{
+  background-image: url('../assets/tienda/productos/fondoStar.png');
+}
+
+.boton_ir_usuario{
+  background-image: url('../assets/home/fondoDato.png');
+}
+
+.bg_alimentacion{
+  background-image: url('../assets/vistas/alimentacion/fondo.jpg');
+}
+.bg_salud-aseo{
+  background-image: url('../assets/vistas/salud/fondo.jpg');
+}
+.bg_descanso{
+  background-image: url('../assets/vistas/descanso/fondo.jpg');
+}
+.bg_minijuegos{
+  background-image: url('../assets/vistas/juegos/fondo.jpg');
+}
+
+.paddingx-1{
+  padding: 0 1vh;
+}
+
+@keyframes palpitacion {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.8); }
+  100% { transform: scale(1); }
+}
+
+.activoButton {
+  animation: palpitacion 1s infinite;
+}
+
+.luzOff::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Color negro semi-transparente */
+}
+
+
+
+
+
